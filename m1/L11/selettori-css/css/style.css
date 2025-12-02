@@ -1,0 +1,65 @@
+h1{
+    font-style: italic;/* corsivo */
+}
+
+.titolo-diverso{
+    color: red;
+    text-decoration: underline;
+}
+
+/* Seleziono tutti i tag di tipo Div Senza distinzione  
+I tag hanno una specificità pari ad uno. 
+*/
+div{
+    font-weight: bold;
+    /* Assegno al testo un effetto grassetto  */
+}
+
+/* Seleziono tutti i tag che hanno la classe selettore-classe.
+Le classi hanno una specificità pari a 10
+*/
+.selettore-classe{
+    color: green;
+}
+
+/* Se le seleziono il tag che ha l'id uguale a selettore-id  
+Specificità 100
+*/
+#selettore-id{
+    text-decoration: underline;
+}
+
+/*selettori avanzati*/
+
+.genitore{
+    color: purple;
+}
+
+.genitore .figlio{/*specificità: 10 + 10 = 20*/
+    color: black;
+}
+
+/* Tutti i tag di tipo SPAN dentro un elemento con la classe genitore  */
+.genitore span{
+    font-size: 20px;
+}
+
+/* Solo gli elementi di tipo SPAN figli diretti di un elemento con la classe genitore (Quindi verranno ignorati i figli di elementi figli) */
+.genitore > span{
+    text-decoration: underline;
+}
+
+/* Questo è un selettore multiplo, vuol dire che tutti i tag citati separati da virgola Subiranno la modifica di stile descritta dal blocco CSS 
+
+La specificità, in questo caso non viene sommata, quindi in caso di conflitto ogni selettore gioca una partita a sé */
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+/* Qui sotto creo volutamente un conflitto con h1(Alla riga 55)
+Vantaggio: Con un solo blocco di stile ho assegnato La maggior parte delle regole di stile a tutti gli h(1~6, riducendo il codice scritto). */
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
