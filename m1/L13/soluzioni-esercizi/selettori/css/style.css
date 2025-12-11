@@ -140,23 +140,56 @@ section {
 /* 15. Tag vs classe
    - Dare un colore al tag p e un altro colore a .testo-speciale
 */
+#ex15 p {
+   color: orange;
+}
+#ex15 .testo-speciale {
+   color: purple;
+}
 
 
 /* 16. ID vs classe vs tag
    - Dare colori diversi a: div, .colorato, #box-id
 */
+#ex16 div {
+   color: brown;
+}
+#ex16 .colorato {
+   color: teal;
+}
+#ex16 #box-id {
+   color: magenta;
+}
 
 
 /* 17. Selettori combinati
    - Dare colori diversi a .nota, .nota.evidenziata
 */
+#ex17 .nota {
+   color: olive;
+} 
+#ex17 .nota.evidenziata {
+   color: navy;
+}
 
 /* 18. Inline style
    - Dare colori diversi a h3 e #titolo-inline
    - Osservare chi vince
 */
+#ex18 h3 {
+   color: maroon;
+}
+#ex18 #titolo-inline {
+   color: lime;
+}
 
 /* 19. !important
    - Dare un colore a .important-test
    - Poi sovrascriverlo con un colore !important in un altro selettore più specifico
 */
+#ex19 .important-test {
+   color: silver !important;
+}
+#ex19 p.important-test {
+   color: gold; /*non viene applicato nonostante la specificità più elevata*/
+}
