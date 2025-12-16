@@ -1,0 +1,96 @@
+:root{
+    --verde-acqua : rgb(26 188 156);
+    --blu: rgb(44 62 80);
+}
+
+/*common styles*/
+*{
+    box-sizing: border-box;/*Serve a far sì che per tutti gli elementi della pagina il pudding venga ricavato all'interno dell'elemento anziché all'esterno, sformando l'elemento stesso*/
+}
+
+.spaced-container{
+    padding: 70px 15px;
+}
+
+.btn{
+    background-color: var(--verde-acqua);
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+.btn-border{
+    border: 1px solid #fff;
+}
+
+/*typography*/
+body{
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+    line-height: 2rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+/*colors*/
+
+.bg-acqua{
+    background-color: var(--verde-acqua);
+}
+.bg-blu{
+    background-color: var(--blu);
+}
+
+.text-white{
+    color: #fff;
+}
+
+.rounded{
+    border-radius: 50%;
+}
+
+
+/*header*/
+
+header{
+    padding: 10px 15px;
+    color: #fff;
+}
+
+/*main*/
+
+.my-picture{
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+
+
+.card{
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background-color: aqua;
+    padding: 25px;
+}
+.card img{
+    border-radius: 50%;
+}
+
+
+
+
