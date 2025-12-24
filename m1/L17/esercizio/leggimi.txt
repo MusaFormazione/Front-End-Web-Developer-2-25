@@ -1,0 +1,24 @@
+I Mockup forniti serviranno per realizzare un sito in 3 pagine.
+
+Struttura menu: 
+- Home
+- About
+- Contact
+
+Se nella pagina ci sono link che non hai a disposizione (per esempio link ai social), puoi utilizzare dei placeholder (#) come valore di href.
+
+Ogni pagina dovrà avere un header con il menu di navigazione e un footer.
+
+Utilizza reset CSS.
+Utilizza un solo foglio CSS per tutte le pagine.
+
+Non è obbligatorio il responsive design, ma è apprezzato se te la senti e credi di riuscire a completarlo nei tempi.
+
+
+Siccome non abbiamo ancora visto background-image in CSS, per ora utilizza background-color per i background delle sezioni.
+
+Per le icone puoi utilizzare FontAwesome o simili.
+
+Per le barre di caricamento valuta l'utilizzo di progress o meter(tag di html5), ma puoi anche realizzarle con div e CSS.
+
+Noterai che molte sezioni si ripetono tra le pagine, sfrutta questa cosa a tuo favore e limita le ripetizioni di codice CSS il più possibile.
