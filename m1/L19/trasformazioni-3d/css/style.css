@@ -1,0 +1,48 @@
+.scene{
+
+    height: 100vh;
+
+    perspective: 600px;
+    position: relative;
+}
+
+.blocco{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+#b1{
+    transform: rotateX(90deg);
+}
+#b2{
+    transform: rotateX(45deg);
+    background-color: blue;
+}
+
+.wrapper{
+    width: 100px;
+    height: 100px;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    transform: rotateY(97deg);/*inserita per mostrare che in caso si applichi una trasformazione durante l'animazione si crea un conflitto*/
+    transform-style: preserve-3d;/* importante per mantenere la profondità dei figli */
+
+    animation: rotazione 5s linear infinite;
+}
+
+@keyframes rotazione{
+    from{
+        transform: rotateY(97deg) translateZ(0);
+        /* se l'elemento che sposti ha già una trasformazione applicata deve essere riportata in tutta l'animazione per evitare che il conflitto la annulli */
+    }
+    to{
+        transform: rotateY(97deg) translateZ(500px);
+    }
+}
+
+
