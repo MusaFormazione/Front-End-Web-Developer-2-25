@@ -1,0 +1,331 @@
+# Project Structure
+
+This file maintains an up-to-date list of project files and structure.
+
+## File Structure
+
+- 📁 `.vscode/`
+- 📁 `L1/`
+  - 📁 `L1\.vscode/`
+    - 📄 `L1\.vscode\project-structure.md` (Markdown)
+  - 📄 `L1\index.html` (HTML)
+- 📁 `L10/`
+  - 📁 `L10\collegare-css/`
+    - 📁 `L10\collegare-css\.vscode/`
+      - 📄 `L10\collegare-css\.vscode\project-structure.md` (Markdown)
+    - 📁 `L10\collegare-css\css/`
+      - 📄 `L10\collegare-css\css\style.css` (CSS)
+    - 📄 `L10\collegare-css\chi-siamo.html` (HTML)
+    - 📄 `L10\collegare-css\index.html` (HTML)
+  - 📁 `L10\selettori-base/`
+    - 📁 `L10\selettori-base\.vscode/`
+      - 📄 `L10\selettori-base\.vscode\project-structure.md` (Markdown)
+    - 📁 `L10\selettori-base\css/`
+      - 📄 `L10\selettori-base\css\style.css` (CSS)
+    - 📄 `L10\selettori-base\index.html` (HTML)
+- 📁 `L11/`
+  - 📁 `L11\.vscode/`
+    - 📄 `L11\.vscode\project-structure.md` (Markdown)
+  - 📁 `L11\pseudoclassi/`
+    - 📁 `L11\pseudoclassi\.vscode/`
+      - 📄 `L11\pseudoclassi\.vscode\project-structure.md` (Markdown)
+    - 📄 `L11\pseudoclassi\hover.html` (HTML)
+  - 📁 `L11\selettori-css/`
+    - 📁 `L11\selettori-css\.vscode/`
+      - 📄 `L11\selettori-css\.vscode\project-structure.md` (Markdown)
+    - 📁 `L11\selettori-css\css/`
+      - 📄 `L11\selettori-css\css\chi-siamo-style.css` (CSS)
+      - 📄 `L11\selettori-css\css\style.css` (CSS)
+    - 📄 `L11\selettori-css\chi-siamo.html` (HTML)
+    - 📄 `L11\selettori-css\index.html` (HTML)
+- 📁 `L12/`
+  - 📁 `L12\.vscode/`
+    - 📄 `L12\.vscode\project-structure.md` (Markdown)
+  - 📁 `L12\esercizi/`
+    - 📁 `L12\esercizi\selettori/`
+      - 📁 `L12\esercizi\selettori\.vscode/`
+        - 📄 `L12\esercizi\selettori\.vscode\project-structure.md` (Markdown)
+      - 📁 `L12\esercizi\selettori\css/`
+        - 📄 `L12\esercizi\selettori\css\style.css` (CSS)
+      - 📄 `L12\esercizi\selettori\index.html` (HTML)
+  - 📁 `L12\pseudoclassi/`
+    - 📁 `L12\pseudoclassi\.vscode/`
+      - 📄 `L12\pseudoclassi\.vscode\project-structure.md` (Markdown)
+    - 📁 `L12\pseudoclassi\css/`
+      - 📄 `L12\pseudoclassi\css\style.css` (CSS)
+    - 📄 `L12\pseudoclassi\index.html` (HTML)
+  - 📁 `L12\pseudoclassi-selezione/`
+    - 📁 `L12\pseudoclassi-selezione\.vscode/`
+      - 📄 `L12\pseudoclassi-selezione\.vscode\project-structure.md` (Markdown)
+    - 📁 `L12\pseudoclassi-selezione\css/`
+      - 📄 `L12\pseudoclassi-selezione\css\style.css` (CSS)
+    - 📄 `L12\pseudoclassi-selezione\index.html` (HTML)
+  - 📁 `L12\selettori/`
+    - 📁 `L12\selettori\.vscode/`
+      - 📄 `L12\selettori\.vscode\project-structure.md` (Markdown)
+    - 📁 `L12\selettori\css/`
+      - 📄 `L12\selettori\css\style.css` (CSS)
+    - 📄 `L12\selettori\index.html` (HTML)
+- 📁 `L13/`
+  - 📁 `L13\.vscode/`
+    - 📄 `L13\.vscode\project-structure.md` (Markdown)
+  - 📁 `L13\accordion/`
+    - 📁 `L13\accordion\css/`
+      - 📄 `L13\accordion\css\style.css` (CSS)
+    - 📄 `L13\accordion\index.html` (HTML)
+  - 📁 `L13\font-size/`
+    - 📁 `L13\font-size\.vscode/`
+      - 📄 `L13\font-size\.vscode\project-structure.md` (Markdown)
+    - 📁 `L13\font-size\css/`
+      - 📄 `L13\font-size\css\style.css` (CSS)
+    - 📄 `L13\font-size\index.html` (HTML)
+  - 📁 `L13\menu-mobile/`
+    - 📁 `L13\menu-mobile\css/`
+      - 📄 `L13\menu-mobile\css\style.css` (CSS)
+    - 📄 `L13\menu-mobile\index.html` (HTML)
+  - 📁 `L13\soluzioni-esercizi/`
+    - 📁 `L13\soluzioni-esercizi\selettori/`
+      - 📁 `L13\soluzioni-esercizi\selettori\.vscode/`
+        - 📄 `L13\soluzioni-esercizi\selettori\.vscode\project-structure.md` (Markdown)
+      - 📁 `L13\soluzioni-esercizi\selettori\css/`
+        - 📄 `L13\soluzioni-esercizi\selettori\css\style.css` (CSS)
+      - 📄 `L13\soluzioni-esercizi\selettori\index.html` (HTML)
+- 📁 `L14/`
+  - 📁 `L14\.vscode/`
+    - 📄 `L14\.vscode\project-structure.md` (Markdown)
+  - 📁 `L14\box-model/`
+    - 📁 `L14\box-model\.vscode/`
+      - 📄 `L14\box-model\.vscode\project-structure.md` (Markdown)
+    - 📁 `L14\box-model\css/`
+      - 📄 `L14\box-model\css\style.css` (CSS)
+    - 📄 `L14\box-model\index.html` (HTML)
+  - 📁 `L14\font-face/`
+    - 📁 `L14\font-face\.vscode/`
+      - 📄 `L14\font-face\.vscode\project-structure.md` (Markdown)
+    - 📁 `L14\font-face\css/`
+      - 📄 `L14\font-face\css\fonts.css` (CSS)
+      - 📄 `L14\font-face\css\style.css` (CSS)
+    - 📁 `L14\font-face\font/`
+      - 📄 `L14\font-face\font\Swirly.otf` (Unknown)
+    - 📄 `L14\font-face\index.html` (HTML)
+  - 📄 `L14\mockup.png` (Unknown)
+- 📁 `L15/`
+  - 📁 `L15\.vscode/`
+    - 📄 `L15\.vscode\project-structure.md` (Markdown)
+  - 📁 `L15\css/`
+    - 📄 `L15\css\style.css` (CSS)
+  - 📄 `L15\index.html` (HTML)
+  - 📄 `L15\mockup.png` (Unknown)
+- 📁 `L16/`
+  - 📁 `L16\.vscode/`
+    - 📄 `L16\.vscode\project-structure.md` (Markdown)
+  - 📁 `L16\css-reset/`
+    - 📁 `L16\css-reset\.vscode/`
+      - 📄 `L16\css-reset\.vscode\project-structure.md` (Markdown)
+    - 📁 `L16\css-reset\css/`
+      - 📄 `L16\css-reset\css\reset.css` (CSS)
+      - 📄 `L16\css-reset\css\style.css` (CSS)
+    - 📄 `L16\css-reset\index.html` (HTML)
+  - 📁 `L16\esercizi/`
+    - 📁 `L16\esercizi\absolute-relative/`
+      - 📁 `L16\esercizi\absolute-relative\.vscode/`
+        - 📄 `L16\esercizi\absolute-relative\.vscode\project-structure.md` (Markdown)
+      - 📁 `L16\esercizi\absolute-relative\css/`
+        - 📄 `L16\esercizi\absolute-relative\css\styles.css` (CSS)
+      - 📁 `L16\esercizi\absolute-relative\img/`
+        - 📄 `L16\esercizi\absolute-relative\img\card-2.JPG` (Unknown)
+      - 📄 `L16\esercizi\absolute-relative\index.html` (HTML)
+    - 📁 `L16\esercizi\sticky-fixed/`
+      - 📁 `L16\esercizi\sticky-fixed\.vscode/`
+        - 📄 `L16\esercizi\sticky-fixed\.vscode\project-structure.md` (Markdown)
+        - 📄 `L16\esercizi\sticky-fixed\.vscode\settings.json` (JSON)
+      - 📁 `L16\esercizi\sticky-fixed\css/`
+        - 📄 `L16\esercizi\sticky-fixed\css\style.css` (CSS)
+      - 📄 `L16\esercizi\sticky-fixed\index.html` (HTML)
+      - 📄 `L16\esercizi\sticky-fixed\leggimi.txt` (Unknown)
+  - 📁 `L16\position/`
+    - 📁 `L16\position\.vscode/`
+      - 📄 `L16\position\.vscode\project-structure.md` (Markdown)
+    - 📁 `L16\position\absolute/`
+      - 📁 `L16\position\absolute\css/`
+        - 📄 `L16\position\absolute\css\style.css` (CSS)
+      - 📄 `L16\position\absolute\index.html` (HTML)
+    - 📁 `L16\position\esempio-hover/`
+      - 📄 `L16\position\esempio-hover\index.html` (HTML)
+    - 📁 `L16\position\relative/`
+      - 📁 `L16\position\relative\css/`
+        - 📄 `L16\position\relative\css\style.css` (CSS)
+      - 📄 `L16\position\relative\index.html` (HTML)
+    - 📁 `L16\position\sticky-fixed/`
+      - 📁 `L16\position\sticky-fixed\css/`
+        - 📄 `L16\position\sticky-fixed\css\style.css` (CSS)
+      - 📄 `L16\position\sticky-fixed\index.html` (HTML)
+- 📁 `L17/`
+  - 📁 `L17\.vscode/`
+    - 📄 `L17\.vscode\project-structure.md` (Markdown)
+  - 📁 `L17\esempi-float/`
+    - 📁 `L17\esempi-float\css/`
+      - 📄 `L17\esempi-float\css\reset.css` (CSS)
+      - 📄 `L17\esempi-float\css\style.css` (CSS)
+    - 📄 `L17\esempi-float\index.html` (HTML)
+  - 📁 `L17\esercizio/`
+    - 📁 `L17\esercizio\.vscode/`
+      - 📄 `L17\esercizio\.vscode\project-structure.md` (Markdown)
+    - 📄 `L17\esercizio\leggimi.txt` (Unknown)
+    - 📄 `L17\esercizio\pagina-about.pdf` (Unknown)
+    - 📄 `L17\esercizio\pagina-contacts.png` (Unknown)
+    - 📄 `L17\esercizio\pagina-home.pdf` (Unknown)
+  - 📁 `L17\layout-base/`
+    - 📁 `L17\layout-base\css/`
+      - 📄 `L17\layout-base\css\reset.css` (CSS)
+      - 📄 `L17\layout-base\css\style.css` (CSS)
+    - 📄 `L17\layout-base\index.html` (HTML)
+  - 📁 `L17\layout-base-mobile-first/`
+    - 📁 `L17\layout-base-mobile-first\.vscode/`
+      - 📄 `L17\layout-base-mobile-first\.vscode\project-structure.md` (Markdown)
+    - 📁 `L17\layout-base-mobile-first\css/`
+      - 📄 `L17\layout-base-mobile-first\css\reset.css` (CSS)
+      - 📄 `L17\layout-base-mobile-first\css\style.css` (CSS)
+    - 📄 `L17\layout-base-mobile-first\index.html` (HTML)
+  - 📁 `L17\layout-base-responsive/`
+    - 📁 `L17\layout-base-responsive\.vscode/`
+      - 📄 `L17\layout-base-responsive\.vscode\project-structure.md` (Markdown)
+    - 📁 `L17\layout-base-responsive\css/`
+      - 📄 `L17\layout-base-responsive\css\reset.css` (CSS)
+      - 📄 `L17\layout-base-responsive\css\style.css` (CSS)
+    - 📄 `L17\layout-base-responsive\index.html` (HTML)
+- 📁 `L18/`
+  - 📁 `L18\.vscode/`
+    - 📄 `L18\.vscode\project-structure.md` (Markdown)
+  - 📁 `L18\background-image/`
+    - 📁 `L18\background-image\css/`
+      - 📄 `L18\background-image\css\reset.css` (CSS)
+      - 📄 `L18\background-image\css\style.css` (CSS)
+    - 📁 `L18\background-image\img/`
+      - 📄 `L18\background-image\img\css-icon.png` (Unknown)
+    - 📄 `L18\background-image\index.html` (HTML)
+  - 📁 `L18\keyframes/`
+    - 📁 `L18\keyframes\css/`
+      - 📄 `L18\keyframes\css\reset.css` (CSS)
+      - 📄 `L18\keyframes\css\style.css` (CSS)
+    - 📄 `L18\keyframes\index.html` (HTML)
+  - 📁 `L18\soluzione/`
+    - 📁 `L18\soluzione\.vscode/`
+      - 📄 `L18\soluzione\.vscode\project-structure.md` (Markdown)
+    - 📁 `L18\soluzione\css/`
+      - 📄 `L18\soluzione\css\reset.css` (CSS)
+      - 📄 `L18\soluzione\css\style.css` (CSS)
+    - 📄 `L18\soluzione\index.html` (HTML)
+    - 📄 `L18\soluzione\pagina-about.pdf` (Unknown)
+    - 📄 `L18\soluzione\pagina-contacts.png` (Unknown)
+    - 📄 `L18\soluzione\pagina-home_page-0002.jpg` (Unknown)
+    - 📄 `L18\soluzione\pagina-home.pdf` (Unknown)
+  - 📁 `L18\tattiche-per-sfondi/`
+    - 📁 `L18\tattiche-per-sfondi\css/`
+      - 📄 `L18\tattiche-per-sfondi\css\reset.css` (CSS)
+      - 📄 `L18\tattiche-per-sfondi\css\style.css` (CSS)
+    - 📁 `L18\tattiche-per-sfondi\img/`
+      - 📄 `L18\tattiche-per-sfondi\img\css-icon.png` (Unknown)
+    - 📄 `L18\tattiche-per-sfondi\index.html` (HTML)
+- 📁 `L19/`
+  - 📁 `L19\.vscode/`
+    - 📄 `L19\.vscode\project-structure.md` (Markdown)
+  - 📁 `L19\flex/`
+    - 📁 `L19\flex\.vscode/`
+      - 📄 `L19\flex\.vscode\project-structure.md` (Markdown)
+    - 📁 `L19\flex\css/`
+      - 📄 `L19\flex\css\reset.css` (CSS)
+      - 📄 `L19\flex\css\style.css` (CSS)
+    - 📄 `L19\flex\flex-2.html` (HTML)
+    - 📄 `L19\flex\index.html` (HTML)
+  - 📁 `L19\trasformazioni-3d/`
+    - 📁 `L19\trasformazioni-3d\css/`
+      - 📄 `L19\trasformazioni-3d\css\reset.css` (CSS)
+      - 📄 `L19\trasformazioni-3d\css\style.css` (CSS)
+    - 📄 `L19\trasformazioni-3d\index.html` (HTML)
+- 📁 `L2/`
+  - 📁 `L2\.vscode/`
+    - 📄 `L2\.vscode\project-structure.md` (Markdown)
+  - 📁 `L2\basi-html/`
+    - 📁 `L2\basi-html\.vscode/`
+      - 📄 `L2\basi-html\.vscode\project-structure.md` (Markdown)
+    - 📄 `L2\basi-html\index.html` (HTML)
+- 📁 `L20/`
+  - 📁 `L20\flex/`
+    - 📁 `L20\flex\.vscode/`
+      - 📄 `L20\flex\.vscode\project-structure.md` (Markdown)
+    - 📁 `L20\flex\css/`
+      - 📄 `L20\flex\css\reset.css` (CSS)
+      - 📄 `L20\flex\css\style.css` (CSS)
+    - 📄 `L20\flex\index.html` (HTML)
+- 📁 `L21/`
+  - 📁 `L21\.vscode/`
+    - 📄 `L21\.vscode\project-structure.md` (Markdown)
+  - 📁 `L21\bootstrap/`
+    - 📁 `L21\bootstrap\.vscode/`
+      - 📄 `L21\bootstrap\.vscode\project-structure.md` (Markdown)
+    - 📄 `L21\bootstrap\index.html` (HTML)
+  - 📁 `L21\esercizio/`
+    - 📄 `L21\esercizio\desktop.png` (Unknown)
+    - 📄 `L21\esercizio\index.html` (HTML)
+    - 📄 `L21\esercizio\mobile.png` (Unknown)
+    - 📄 `L21\esercizio\tablet.png` (Unknown)
+  - 📁 `L21\layout-flex/`
+    - 📁 `L21\layout-flex\.vscode/`
+      - 📄 `L21\layout-flex\.vscode\project-structure.md` (Markdown)
+    - 📁 `L21\layout-flex\css/`
+      - 📄 `L21\layout-flex\css\reset.css` (CSS)
+      - 📄 `L21\layout-flex\css\style.css` (CSS)
+    - 📄 `L21\layout-flex\index.html` (HTML)
+  - 📄 `L21\.gitignore` (Unknown)
+- 📁 `L3/`
+  - 📁 `L3\.vscode/`
+    - 📄 `L3\.vscode\project-structure.md` (Markdown)
+  - 📁 `L3\sito/`
+    - 📁 `L3\sito\.vscode/`
+      - 📄 `L3\sito\.vscode\project-structure.md` (Markdown)
+    - 📄 `L3\sito\chi-siamo.html` (HTML)
+    - 📄 `L3\sito\contatti.html` (HTML)
+    - 📄 `L3\sito\index.html` (HTML)
+  - 📁 `L3\tag-img/`
+    - 📁 `L3\tag-img\.vscode/`
+      - 📄 `L3\tag-img\.vscode\project-structure.md` (Markdown)
+    - 📁 `L3\tag-img\img/`
+      - 📄 `L3\tag-img\img\pizza.jpg` (Unknown)
+    - 📄 `L3\tag-img\index.html` (HTML)
+  - 📄 `L3\a.html` (HTML)
+  - 📄 `L3\ancore.html` (HTML)
+  - 📄 `L3\HTML5_logo_and_wordmark.svg.png` (Unknown)
+- 📁 `L4/`
+  - 📁 `L4\.vscode/`
+    - 📄 `L4\.vscode\project-structure.md` (Markdown)
+  - 📄 `L4\tabelle.html` (HTML)
+- 📁 `L6/`
+  - 📁 `L6\.vscode/`
+    - 📄 `L6\.vscode\project-structure.md` (Markdown)
+  - 📄 `L6\form.html` (HTML)
+- 📁 `L7/`
+  - 📁 `L7\.vscode/`
+    - 📄 `L7\.vscode\project-structure.md` (Markdown)
+  - 📄 `L7\form.html` (HTML)
+  - 📄 `L7\risultato.html` (HTML)
+- 📁 `L8/`
+  - 📁 `L8\.vscode/`
+    - 📄 `L8\.vscode\project-structure.md` (Markdown)
+  - 📁 `L8\soluzione/`
+    - 📁 `L8\soluzione\.vscode/`
+      - 📄 `L8\soluzione\.vscode\project-structure.md` (Markdown)
+    - 📄 `L8\soluzione\index.html` (HTML)
+    - 📄 `L8\soluzione\mockup.JPG` (Unknown)
+  - 📄 `L8\index.html` (HTML)
+- 📁 `L9/`
+  - 📁 `L9\.vscode/`
+    - 📄 `L9\.vscode\project-structure.md` (Markdown)
+  - 📁 `L9\basi-css/`
+    - 📁 `L9\basi-css\.vscode/`
+      - 📄 `L9\basi-css\.vscode\project-structure.md` (Markdown)
+    - 📄 `L9\basi-css\index.html` (HTML)
+  - 📄 `L9\iframe.html` (HTML)
+
+---
+Last updated: 2026-01-16T15:42:13.476Z
