@@ -1,0 +1,13 @@
+{
+  "name": "basi-sass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:w": "sass scss/style.scss css/style.css -w",
+    "compile:sass": "sass scss/style.scss css/style.css",
+    "minify-sass": "sass scss/style.scss css/style.css --style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
