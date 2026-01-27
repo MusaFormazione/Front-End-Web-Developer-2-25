@@ -5,6 +5,7 @@ This file maintains an up-to-date list of project files and structure.
 ## File Structure
 
 - 📁 `.vscode/`
+  - 📄 `.vscode\project-structure.md` (Markdown)
 - 📁 `css/`
   - 📄 `css\style.css` (CSS)
   - 📄 `css\style.css.map` (Unknown)
@@ -14,4 +15,4 @@ This file maintains an up-to-date list of project files and structure.
 - 📄 `package.json` (JSON)
 
 ---
-Last updated: 2026-01-22T19:23:03.802Z
+Last updated: 2026-01-27T18:12:11.864Z

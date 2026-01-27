@@ -1,0 +1,59 @@
+@use "sass:map";//importo il modulo map per poter user map.get
+@use 'colori' as *;//as * per importare tutte le variabili definite nel partial _colori.scss e poterle utilizzare direttamente senza dover specificare il nome del file
+@use "mixins" as *;
+@use "header";
+
+/*
+commento a 
+righe multiple
+*/
+
+//commento a riga singola
+.section1{
+    background-color: aquamarine;
+    padding: 50px;
+    
+    h3{
+        font-size: 3rem;
+    }
+    &:hover{
+        background-color: red;
+    }
+    
+}
+
+.post{
+
+    &-title{
+        font-weight: bold;
+        background-color: bisque;
+    }
+
+    &-content{
+        font-style: italic;
+        background-color: burlywood;
+    }
+}
+
+button{
+    background-color: map.get($colori, rosso);
+}
+
+#quadrato1{
+    border: 1px dashed black;
+    @include quadratoRosso;
+}
+#quadrato2{
+    box-shadow: 2px 2px 5px black;
+    @include quadratoRosso;
+}
+
+#quadrato3{
+    border: 1px dashed black;
+    @include quadrato(250px, yellow);
+}
+#quadrato4{
+    box-shadow: 2px 2px 5px black;
+    overflow: hidden;
+    @include quadrato(50px, rgb(0, 191, 255));
+}

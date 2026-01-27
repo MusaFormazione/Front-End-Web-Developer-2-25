@@ -1,0 +1,17 @@
+@mixin quadratoRosso{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@mixin quadrato($dimensione, $colore){
+    width: $dimensione;
+    height: $dimensione;
+    background-color: $colore;
+}
+
+@mixin rettangolo($altezza, $larghezza, $colore){
+    width: $larghezza;
+    height: $altezza;
+    background-color: $colore;
+}

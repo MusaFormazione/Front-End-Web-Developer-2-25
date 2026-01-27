@@ -1,0 +1,9 @@
+@use 'colori' as *;
+
+header#header{
+    background-color: $colorePrincipale;
+    color: white;
+    height: 70px;
+    position: sticky;
+    top: 0;
+}
