@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let pizza = {
+            gusto: "Margherita",
+            prezzo: 5,
+            disponibile: true,
+            info: function(){
+                console.log("Il prezzo della pizza " + pizza.gusto + " è di " + pizza.prezzo + "€");
+            }
+        }
+
+        let pizza2 = {
+            gusto: "Diavola",
+            prezzo: 1,
+            disponibile: true,
+            info: function(){
+                console.log("Il prezzo della pizza " + pizza2.gusto + " è di " + pizza2.prezzo + "€");
+            }
+        }
+
+        pizza.info();
+        pizza2.info();
+
+        
+        {
+            //Questo è un costruttore di oggetti, un tempo in javascript si utilizzava molto, ma con le novità introdotte da ES6 Consiglio di utilizzare solo ed esclusivamente le classi 
+            // function Pizza(gusto, prezzo, disponibile){
+            //     this.gusto = gusto;
+            //     this.prezzo = prezzo;
+            //     this.disponibile = disponibile;
+            //     this.info = function(){
+            //         console.log("Il prezzo della pizza " + this.gusto + " è di " + this.prezzo + "€");
+            //     }
+            // }
+
+        }
+
+
+        {
+
+            //Questa classe di base è come uno stampino per realizzare tanti oggetti dello stesso tipo in serie 
+            //Molto spesso avrai bisogno di gestire oggetti tutti uguali all'interno di automatismi che ti permetteranno di costruire pagine intere con poche righe
+            //Prendilo come se fosse un libretto d'istruzioni per realizzare tante pizze, tutte uguali.
+            //Avrà il vantaggio di scrivere molto meno realizzando di fatto molti più oggetti. Inoltre, il codice sarà più mantenibile e richiederà molti meno interventi. 
+            class Pizza{
+                constructor(gusto, prezzo, disponibile){
+                    //this È una parola chiave contestuale, rappresenta l'oggetto che verrà creato. 
+                    this.gusto = gusto;
+                    this.prezzo = prezzo;
+                    this.disponibile = disponibile;
+                }
+
+                info(){
+                    console.log("Il prezzo della pizza " + this.gusto + " è di " + this.prezzo + "€");
+                }
+            }
+
+
+            //Con questa riga io sto dicendo a javascript di creare un nuovo oggetto di tipo pizza seguendo le istruzioni inserite nella classe Pizza. Sto dicendo anche che il gusto dovrà essere Margherita, il prezzo dovrà essere 5 e disponibile dovrà essere uguale a true 
+            const margherita = new Pizza("Margherita",5,true);
+
+
+            //Da qui in poi ogni riga è un nuovo oggetto pizza generato automaticamente. 
+            const diavola = new Pizza("Diavola",1,true);
+            const marinara = new Pizza("Marinara",4,true);
+            const hawayana = new Pizza("Hawayana",300, false);
+
+            
+            console.table([margherita, diavola, marinara, hawayana]);
+            
+            //Il metodo Info inserito all'interno della classe a questo punto l'ho scritto una sola volta, ma ha un funzionamento identico per ogni pizza, Sei invocato, mostrerà il gusto e il prezzo della pizza che lo invoca             
+            margherita.info();
+            diavola.info();
+            marinara.info();
+            hawayana.info();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

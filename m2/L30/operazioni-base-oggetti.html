@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+//Creo dei blocchi con le graffe solo perché così durante questa spiegazione didattica posso riutilizzare gli stessi nomi variabile le stesse variabili più volte senza avere problemi 
+        
+
+        let obj = {
+            prop: "Valore"
+        }
+
+        console.log(obj);
+
+        //lettura di un singolo valore di un oggetto
+        console.log( obj.prop );
+        //Sovrascrittura di un singolo valore dentro l'oggetto
+        obj.prop = "Valore Modificato";
+        console.log( obj.prop );
+        //Aggiunta di una proprietà e il suo rispettivo valore
+        obj.prop2 = "Nuova proprietà";
+        console.log( obj );
+        //Rimozione di una proprietà 
+        delete obj.prop2
+        console.log( obj );
+
+        //Nella programmazione ad oggetti, molto spesso è considerata una pratica negativa aggiungere o rimuovere proprietà da un oggetto perché potrebbe ledere la stabilità e la solidità dell'intera applicazione  
+        //Il javascript, però, gli oggetti sono utilizzati anche come tipo di dato e non solo come struttura di programmazione. Ecco perché vi permette di aggiungere o rimuovere delle proprietà, Tieni però presente che verrà Utilizzata questa possibilità abbastanza raramente 
+
+        const obj2 = {
+            prova: "Esempio"
+        }
+
+        //obj2 = {};//Questa cosa non si può fare perché la variabile è una const 
+
+        obj2.prova = "Esempio modificato";//Si può fare 
+        //Quando un oggetto è impostato come costante, i suoi valori sono comunque modificabili 
+        
+        //Eventualmente, se mai volessi congelare anche il Tutto all'interno alla costante, puoi fare questo:
+        
+        Object.freeze(obj2);//Dopo questa riga, se proverai a cambiare il le proprietà di questo oggetto non avrai errori, ma qualunque riassegnamento non andrà a buon fine in maniera silenziosa. 
+
+        
+
+    </script>
+
+</body>
+</html>
