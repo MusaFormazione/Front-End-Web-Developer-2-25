@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function somma(a,b){
+            console.log(a + b);            
+        }
+
+        somma(2,5)
+        
+        somma()
+
+        console.log("%c ------------------ ", "color: red; font-size: 20px;");
+        
+        function aggiungiIVA(prezzo){
+            console.log(prezzo * 1.22);
+        }
+
+        // console.log(prezzo); prezzo is not defined
+        // I parametri nascono all'inizio dell'invocazione di una funzione e muoiono alla fine, non esistono al di fuori della funzione
+        
+        
+        aggiungiIVA(1);
+        aggiungiIVA(5);
+        
+        console.log("%c ------------------ ", "color: red; font-size: 20px;");
+
+    </script>
+</body>
+</html>
