@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        const saluta = () => {
+            console.log("Ciao!");
+        }
+        /*
+        
+            è come scrivere questa:
+           
+            function saluta(){
+              console.log("Ciao!");
+           }
+        
+        */
+
+
+        //Quando una funzione freccia è molto breve, puoi evitare di usare le parentesi graffe, Ma devi ricordare che rimuovendole non puoi usare il return, in quanto in realtà è sottinteso, lo inserisce javascript. 
+        const restituisciSaluto = () => "Ciao";
+
+        console.log( restituisciSaluto() );
+
+        //Quando una funzione freccia è parametrizzata ed ha un solo parametro, puoi evitare di mettere addirittura le parentesi tonde
+        const raddoppia = numero => numero * 2;
+        
+        console.log("4 raddoppiato", raddoppia(4));
+        console.log("7 raddoppiato", raddoppia(7));
+
+        //Se è la funzione freccia ha più di un parametro, allora le parentesi tonde tornano obbligatorie. 
+        const somma = (a,b) => a + b;
+
+        console.log( somma(2,2) );
+        
+        //A prescindere dal numero di parametri che utilizzi, puoi scegliere di usare o meno le parentesi graffe Per il corpo della funzione.
+        //Tieni presente che se nella funzione hai più istruzioni e quindi devi andare a capo. Le parentesi graffe sono obbligatorie. 
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
