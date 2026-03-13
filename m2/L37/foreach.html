@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const pizze = ["Margherita","Diavola","Marinara"];
+
+        pizze.forEach(p => {
+            console.log(p);            
+        });
+        // ecco come lo faresti con for...of
+        // for(let p of pizze){
+        //     console.log(p);            
+        // }
+        
+        //ecco come lo faresti con for
+        // for(let i = 0; i < pizze.length; i++){
+        //     let p = pizze[i];
+        //     console.log(p);            
+        // }
+
+        console.error("=============================");
+
+        /*
+        ForEach non restituisce niente
+        */
+        pizze.forEach((p, i) => {
+            //i è un Parametro facoltativo che contiene l'indice dell'elemento ciclato (lo usi solo se ti serve)
+            console.log(p, i);            
+        });
+        
+
+    </script>
+</body>
+</html>

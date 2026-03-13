@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Questa funzione ha un parametro con valore default, significa che se il terzo argomento non è fornito il valore di c è 0
+        // function somma(a,b,c = 0){
+        //     return a + b + c;
+        // }
+
+        // console.log(somma(2,4,6));
+        // console.log(somma(2,4));
+        
+        function sommaProMax(...numeri){
+            return numeri.reduce((acc, n)=>acc + n);
+        }
+
+        console.log(sommaProMax(1,2,5,4,78,9,6,32,5))
+        
+    </script>
+    
+</body>
+</html>

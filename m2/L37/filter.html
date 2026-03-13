@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const pizze = ["Margherita","Diavola","Marinara"];
+
+        const pizzeLunghe = pizze.filter(p => p.length > 8);
+        console.log(pizzeLunghe);
+
+        
+
+        const arrayPizze = [
+            {gusto: "Margherita", prezzo: 5},
+            {gusto: "Diavola", prezzo: 1},
+            {gusto: "Marinara", prezzo: 4}
+        ];
+        //Filter si aspetta di restituire un booleano, se restituisce true allora l'elemento viene inserito nell'array di output.
+        //Quindi in questo caso se il prezzo è minore di 5 allora l'elemento viene inserito nell'array di output.
+
+        //perchè p.prezzo? perchè p è un oggetto che rappresenta una pizza, e prezzo è una proprietà di quell'oggetto.
+        const pizzeEconomiche = arrayPizze.filter(p => p.prezzo < 5);
+        console.log(pizzeEconomiche);
+
+    </script>
+    
+    
+</body>
+</html>

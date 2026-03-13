@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        const anni = 50;
+        const risultato = anni >= 18 ? "Maggiorenne" : "Minorenne";
+
+        console.log(risultato);        
+
+
+// ESERCIZIO 5: TROVARE IL MASSIMO
+let numeri = [23, 67, 12, 89, 34, 56, 90, 45];
+
+const massimo = numeri.reduce((max, numeroCiclato) => {
+    return numeroCiclato > max ? numeroCiclato : max;
+})
+
+console.log(massimo);
+
+
+    </script>
+
+</body>
+</html>

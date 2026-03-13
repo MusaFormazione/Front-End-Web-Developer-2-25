@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const array = [1,2,3];
+        const array2 = [4,5,6];
+
+        const arrayConcatenato = [...array, ...array2]
+        console.log(arrayConcatenato);
+
+        const userAuth = {
+            email: "info@prova.it",
+            password: "password"
+        }
+
+        const userData = {
+            nome:"Mario",
+            cognome:"Rossi"
+        }
+
+
+
+        const user = {
+            ...userAuth,
+            ...userData,
+            anni:30
+        }
+
+        console.log(user);
+        
+        
+
+
+
+        
+
+    </script>
+    
+</body>
+</html>
