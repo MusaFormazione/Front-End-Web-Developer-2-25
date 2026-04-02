@@ -1,0 +1,39 @@
+#memory{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    max-height: 800px;
+    max-width: 800px;
+}
+.card-item{
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    cursor: pointer;
+    flex: 1 0 calc(25% - 1px);
+    aspect-ratio: 1/1;
+}
+
+.icon{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card-item.flipped .icon{
+    animation-name: flip;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    /* animation-play-state:paused; */
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
