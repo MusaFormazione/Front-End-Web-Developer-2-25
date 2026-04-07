@@ -1,0 +1,73 @@
+#memory{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    max-height: 800px;
+    max-width: 800px;
+    position: relative;
+}
+#no-click-overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#memory.no-click #no-click-overlay{
+    display: block;
+}
+
+.card-item.flipped{
+    position: relative;
+    z-index: 100;
+}
+
+.card-item{
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    cursor: pointer;
+    flex: 1 0 calc(25% - 1px);
+    aspect-ratio: 1/1;
+}
+
+.icon{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card-item.flipped .icon{
+    animation-name: flip;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    /* animation-play-state:paused; */
+}
+
+.card-item.correct{
+    background-color: yellow;
+    box-shadow: 1px 1px 5px #00000077;
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+#start-game-message.started{
+    display: none;
+}
+
+#start-game-message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

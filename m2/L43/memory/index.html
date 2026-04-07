@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+
+    <div id="memory">
+        <!-- 
+        commentati per ricordare la struttura, non decommentarli perchè li crea js a runtime
+        <div class="card-item">
+            <div class="icon">🦊</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐶</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐱</div>
+        </div>  
+        <div class="card-item">
+            <div class="icon">🐸</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐵</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐼</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐷</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🦁</div>
+        </div>
+          <div class="card-item">
+            <div class="icon">🦊</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐶</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐱</div>
+        </div>  
+        <div class="card-item">
+            <div class="icon">🐸</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐵</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐼</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🐷</div>
+        </div>
+        <div class="card-item">
+            <div class="icon">🦁</div>
+        </div> -->
+        <div id="no-click-overlay">
+            <!-- Livello nascosto che coprirà tutte le card non selezionate quando sono selezionate due card  -->
+        </div>
+    </div>
+
+    <div id="timer">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Tempo: <span id="time">0</span> secondi</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="start-game-message"> 
+
+        <div class="row">
+            <div class="col-12 alert alert-info text-center">
+                <h1>Gioco del memory</h1>
+                <h2>Premi il bottone per iniziare</h2>
+                <p>
+                    All'avvio della partita verranno mostrate 16 card con icone casuali. Devi trovare tutte le coppie di card identiche.
+
+                    Si avvierà un timer che conterà il tempo impiegato per completare la partita, cerca di fare il punteggio migliore possibile!
+                </p>
+            </div>
+            <div class="col-3 offset-4 text-center">
+                <button id="start-btn" class="btn btn-primary">Inizia la partita</button>
+            </div>
+        </div>
+            
+    </div>
+
+    <script src="./js/memory.js"></script>
+</body>
+</html>

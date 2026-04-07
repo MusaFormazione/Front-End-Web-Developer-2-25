@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        sessionStorage.setItem('nome','michele');//salvo nome=michele
+
+        const nome = sessionStorage.getItem('nome');//prelevo ed utilizzo il nome salvato
+
+        console.log(nome);
+
+        /**
+         * Attenzione: Si possono salvare solo stringhe 
+         * 
+         * Se devi salvare un oggetto o un array si può risolvere usando 
+         * 
+         * JSON.stringify() //converte oggetti/array in stringhe formato json
+         * JSON.parse() //converte stringa json in oggetti/array
+         */
+
+        
+
+    </script>
+
+</body>
+</html>
