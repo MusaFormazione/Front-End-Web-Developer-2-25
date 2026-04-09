@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <form id="form-todo">
+        <input type="text" class="form-control" placeholder="es. Fare il bucato">
+        <button class="btn btn-primary">Aggiungi</button>
+    </form>
+
+    <hr>
+    <div id="lista-todo">
+        <h2>Da fare</h2>
+        
+    </div>
+    <div id="lista-todo-completi">
+        <h2>Completati</h2>
+    </div>
+
+    <template>
+        <div class="alert alert-info">
+            <p></p>
+            <button class="btn btn-warning">Completa</button>
+            <button class="btn btn-danger">Elimina</button>
+        </div>
+    </template>
+
+    <script>
+
+        const form = document.getElementById('form-todo');
+        
+        /**
+         * Funzione che fa una copia dell'html del todo 
+         * nel tag template a riga 26 e restituisce un oggetto DOM clone
+         * 
+         * @returns {HTMLDivElement} - Un clone del todo
+         */
+        function getHtmlClone(){
+            const template = document.getElementsByTagName('template')[0];
+            
+            const clone = template.content.cloneNode(true);
+            
+            return clone;
+        }
+        
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            
+            const listaTodo = document.querySelector('#lista-todo');
+            const todoInput = document.querySelector('#form-todo input');
+            const todoElement = getHtmlClone();
+
+            todoElement.querySelector('p').innerText = todoInput.value
+
+            listaTodo.append(todoElement)
+        })
+
+    </script>
+    
+</body>
+</html>
