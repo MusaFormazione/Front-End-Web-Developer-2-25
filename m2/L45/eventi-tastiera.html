@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #blocco{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="blocco"></div>
+
+    <script>
+        const cerchio = document.getElementById('blocco');
+
+        let marginTop = 0;
+        let marginLeft = 0;
+
+        window.addEventListener('keypress', function(e){
+            console.log(e);
+            
+            if(e.key == "w"){
+                marginTop--; 
+                cerchio.style.marginTop = marginTop + "px";
+            }
+
+            if(e.key == "s"){
+                marginTop++; 
+                cerchio.style.marginTop = marginTop + "px";
+            }
+
+            if(e.key == "a"){
+                marginLeft--; 
+                cerchio.style.marginLeft = marginLeft + "px";
+            }
+
+            if(e.key == "d"){
+                marginLeft++; 
+                cerchio.style.marginLeft = marginLeft + "px";
+            }
+            
+        })
+
+
+    </script>
+</body>
+</html>

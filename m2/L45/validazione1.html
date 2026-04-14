@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-12">
+            <h1>Validazione Form</h1>
+        </div>
+        <div class="col-12">
+            <form id="myForm">
+
+                <div class="form-group">
+                    <input type="text" class="form-control required" id="nome" placeholder="nome*">
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <!-- Non c'è la classe required, quindi questo campo non è obbligatorio -->
+                    <input type="text" class="form-control" id="cognome" placeholder="cognome">
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control required" id="email" placeholder="email*">
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" autocomplete="password" class="form-control required" id="password" placeholder="password*">
+                    <span class="text-danger"></span>
+                    <button type="button" id="password-toggle" class="btn btn-info">Mostra</button>
+                </div>
+
+                <button class="btn btn-primary">Invia</button>
+
+            </form>
+        </div>
+    </div>
+    
+    <script>
+
+        const form = document.getElementById('myForm');
+        //validazione form
+        form.addEventListener('submit',function(e){
+            e.preventDefault();//previene comportamento di default
+            
+            const requiredFields = document.querySelectorAll('#myForm .required');
+            const [nome, email, password] = requiredFields;
+
+            let valid = true;
+            
+            // Espressione regolare che trova una email all'interno di un testo
+            const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+            // Il metodo test è un metodo che permette di eseguire una regex su una stringa
+            if(!emailRegex.test(email.value)){
+                email.nextElementSibling.innerText = "Inserisci una email valida";
+            }
+
+            // if(nome.value == ""){
+            //     nome.nextElementSibling.innerText = "Compila il campo";
+            //     valid = false;
+            // }
+
+            // if(email.value == ""){
+            //     email.nextElementSibling.innerText = "Compila il campo";
+            //     valid = false;
+            // }
+
+            // if(password.value == ""){
+            //     password.nextElementSibling.innerText = "Compila il campo";
+            //     valid = false;
+            // }
+
+            //versione sintetica e automatizzata
+            requiredFields.forEach(f => {
+                if(!f.value){
+                    f.nextElementSibling.innerText = "Compila il campo";
+                    valid = false;
+                }
+            })
+            
+            if(valid){
+                //invia i dati al server
+            }
+
+        })
+
+
+
+
+        const passwordToggle = document.getElementById('password-toggle');
+
+        //funzionamento mostra password
+        passwordToggle.addEventListener('click',function(){
+            const pwdInput = document.getElementById('password');
+            const isHidden = pwdInput.type === "password";
+
+            pwdInput.type = isHidden ? "text" : "password"
+            passwordToggle.innerText = isHidden ? "Nascondi" : "Mostra"
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
