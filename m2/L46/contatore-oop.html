@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="contatore">0</div>
+    <button id="aumenta">+</button>
+    <button id="riduci">-</button>
+    
+    <script>
+
+       class App{
+
+            constructor(){
+                this.btnAumenta = document.querySelector('#aumenta');
+                this.btnRiduci = document.querySelector('#riduci');
+                this.contatoreElement = document.getElementById('contatore');
+                this.count = 0;
+            }
+
+            init(){
+                this.btnAumenta.addEventListener('click',() => {
+                    this.count++;
+                    this.contatoreElement.innerText = this.count;
+                })
+
+                this.btnRiduci.addEventListener('click',() => {
+                    this.count--;
+                    this.contatoreElement.innerText = this.count;
+                })
+            }
+
+        }
+
+        const app = new App();
+
+        app.init()
+
+    </script>
+
+</body>
+</html>
