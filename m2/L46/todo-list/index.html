@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+
+    <input id="inputTesto" type="text" class="form-control" placeholder="es. Fare il bucato">
+    <button id="btnSalva" class="btn btn-primary">Salva</button>
+
+
+    <hr>
+    <div id="lista-todo">
+        <h2>Da fare</h2>
+        
+    </div>
+    <div id="lista-todo-completi">
+        <h2>Completati</h2>
+    </div>
+
+    <template>
+        <div class="alert alert-info">
+            <p></p>
+            <button class="btn btn-warning btnCompleta">Completa</button>
+            <button class="btn btn-danger btnElimina">Elimina</button>
+        </div>
+    </template>
+
+    <script>
+        const btnSalva = document.getElementById('btnSalva');
+        //single source of truth
+        const arrayTodo = getAllTodos() ?? [];//se la funzione restituisce nulla allora la variabile conterrà un array vuoto
+        
+        btnSalva.addEventListener('click',function(){
+            const listaTodo = document.querySelector('#lista-todo');
+            const listaTodocompleti = document.querySelector('#lista-todo-completi');
+            const inputTesto = document.getElementById('inputTesto');
+            const todoElement = getHtmlClone();//otteniamo il clone
+            
+            const [p, btnCompleta, btnElimina] = todoElement.querySelectorAll('p, .btnCompleta, .btnElimina');
+
+            if(!inputTesto.value){
+                alert('Compila il campo');
+                return;//blocco la funzione
+            }
+
+            p.innerText = inputTesto.value;
+            btnCompleta.addEventListener('click',function(){                
+                listaTodocompleti.appendChild(todoElement)
+                btnCompleta.remove()
+                setTodoCompleted(inputTesto.value)
+            })
+
+            saveTodo(inputTesto.value);
+
+            btnElimina.addEventListener('click',function(){
+                todoElement.remove();
+                deleteTodo(inputTesto.value)
+            })
+            
+            listaTodo.append(todoElement)
+            inputTesto.value = "";//svuoto il campo
+           
+        })
+
+
+        function saveTodo(text){
+            const newTodo = {
+                text,
+                completed: false
+            }
+
+            arrayTodo.push(newTodo)
+
+            const arrayTodoJson = JSON.stringify(arrayTodo);
+            
+            localStorage.setItem('lista-todo', arrayTodoJson)
+        }
+
+        /**
+         * Trova un todo in localstorage tramite il suo testo e imposta stato completamento a true
+         * 
+         * @param {string} text - il testo del todo da aggiornare
+         * @return {void} 
+         */
+        function setTodoCompleted(text){
+
+            //cerco l'elemento e ottengo il suo indice nell'array
+            const foundTodoIndex = arrayTodo.findIndex(t => t.text === text);
+
+            //usando l'indice accedo all'oggetto e lo modifico
+            arrayTodo[foundTodoIndex].completed = true;
+
+            //converto l'array(ora che è stato modificato) in json
+            const arrayTodoJson = JSON.stringify(arrayTodo);
+            
+            //aggiorno il valore nel localstorage
+            localStorage.setItem('lista-todo', arrayTodoJson)
+
+        }
+
+        /**
+         * Trova un todo in localstorage tramite il suo testo e lo elimina
+         * 
+         * @param {string} text - il testo del todo da eliminare
+         * @return {void} 
+         */
+        function deleteTodo(text){
+
+            //filtro l'array restituendo tutti gli oggetti tranne quello che voglio eliminare
+            const newArrayTodo = arrayTodo.filter(t => t.text !== text);
+
+            //converto l'array(ora che è stato modificato) in json
+            const arrayTodoJson = JSON.stringify(newArrayTodo);
+            
+            //aggiorno il valore nel localstorage
+            localStorage.setItem('lista-todo', arrayTodoJson)
+
+        }
+
+
+
+
+        /**
+         * Cerca la lista di todo nel localstorage e la restituisce
+         * 
+         * @returns {null|array} - Restisuisce array di oggetti Todo oppure null
+         */
+        function getAllTodos(){
+            const listaTodoJson = localStorage.getItem('lista-todo');
+            
+            //se non c'è la lista blocca la funzione
+            if(!listaTodoJson) return null;
+
+            const listaTodo = JSON.parse(listaTodoJson);
+
+            return listaTodo;
+        }
+
+
+        function buildTodoList(){
+            arrayTodo.forEach(todo => {
+                const listaTodo = document.querySelector('#lista-todo');
+                const listaTodocompleti = document.querySelector('#lista-todo-completi');
+                const todoElement = getHtmlClone();//otteniamo il clone
+            
+                const [p, btnCompleta, btnElimina] = todoElement.querySelectorAll('p, .btnCompleta, .btnElimina');
+
+                p.innerText = todo.text;
+                btnCompleta.addEventListener('click',function(){                
+                    listaTodocompleti.appendChild(todoElement)
+                    btnCompleta.remove()
+                    setTodoCompleted(todo.text)
+                })
+
+                btnElimina.addEventListener('click',function(){
+                    todoElement.remove();
+                    deleteTodo(todo.text)
+                })
+                
+                if(!todo.completed){
+                    listaTodo.append(todoElement)
+                }else{
+                    //se il todo è completo lo metto nella lista completati e gli rimuovo il tasto elimina
+                    listaTodocompleti.append(todoElement)
+                    btnCompleta.remove()
+                }
+
+            });
+        }
+
+        buildTodoList()
+
+
+
+
+
+
+
+
+
+
+        
+        /**
+         * Funzione che fa una copia dell'html del todo 
+         * nel tag template a riga 26 e restituisce un oggetto DOM clone
+         * 
+         * @returns {HTMLDivElement} - Un clone del todo
+         */
+        function getHtmlClone(){
+            const template = document.getElementsByTagName('template')[0];//seleziono il tag template
+            
+            const clone = template.content.cloneNode(true);//creo un clone, ma restituisce un oggetto document-fragment(non un elemento dom)
+
+            //Per convertire il fragment in un elemento del DOM, creo un temporaneo 
+            const div = document.createElement('div');
+            //Al suo interno metto il clone, Convertendolo in questo modo in un elemento DOM classico  
+            div.append(clone)
+            
+            //Usando querySelector cerco all'interno del DIV l'elemento che ho messo al suo interno e lo restituisco 
+            return div.querySelector('.alert.alert-info');//restituisco il clone
+        }
+    </script>
+    
+</body>
+</html>

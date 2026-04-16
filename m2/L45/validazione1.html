@@ -58,6 +58,7 @@
             // Il metodo test è un metodo che permette di eseguire una regex su una stringa
             if(!emailRegex.test(email.value)){
                 email.nextElementSibling.innerText = "Inserisci una email valida";
+                valid = false;
             }else{
                 email.nextElementSibling.innerText = "";
             }
