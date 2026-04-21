@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Pizza{
+            constructor(gusto, prezzo){
+                this.gusto = gusto;
+                this.prezzo = prezzo;
+            }
+        }
+
+        class Primo{
+
+        }
+
+        class Secondo{
+
+        }
+
+        class Menu{
+
+            constructor(){
+                this.pizze = [];
+                this.primi = [];
+                this.secondi = [];
+            }
+
+            aggiungiPizza(gusto, prezzo){
+                this.pizze.push( new Pizza(gusto, prezzo) )
+            }
+
+            aggiungiPrimo(primo){
+                this.primi.push(primo)
+            }
+
+            aggiungiSecondo(secondo){
+                this.secondi.push(secondo)
+            }
+
+        }
+
+
+        const menu = new Menu();
+        menu.aggiungiPizza("Margherita", 5)
+        menu.aggiungiPizza("Diavola", 1)
+
+
+        console.log(menu);
+        
+
+
+    </script>
+
+</body>
+</html>

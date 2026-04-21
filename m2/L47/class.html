@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Pizza{
+            
+            constructor(_gusto, _prezzo){
+                //All'interno del constructor io creo le proprietà e assegno loro un valore
+                this.gusto = _gusto;
+                this.prezzo = _prezzo;
+                //È molto importante però ricordare che constractor è una funzione che viene invocata quando viene istanziato un oggetto, di conseguenza tutto ciò che c'è al suo interno, qualsiasi istruzione verrà eseguita esattamente nel momento dell'Istanziamento 
+                console.log('istanziato');
+            }
+
+            mostraInfo(){
+                console.log(`la pizza ${this.gusto} costa ${this.prezzo}€`);
+            }
+
+        }
+
+        const margherita = new Pizza("Margherita",5);//istanziamento
+
+        const diavola = new Pizza("Diavola",1);
+
+        margherita.mostraInfo();
+        diavola.mostraInfo();
+        
+
+
+    </script>
+
+</body>
+</html>

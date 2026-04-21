@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Veicolo{
+
+            constructor(nRuote, maxSpeed){
+                this.nRuote = nRuote;
+                this.speed = 0;
+                this.maxSpeed = maxSpeed;
+            }
+
+            accelera(incremento){
+            
+                if((this.speed + incremento) <= this.maxSpeed){
+                    this.speed += incremento;
+                }
+            }
+
+            frena(){
+                if(this.speed > 0){
+                    this.speed--
+                }
+            }   
+
+        }
+
+
+        class Bici extends Veicolo{
+            constructor(haRotelle = false){
+                super(2, 40);
+                if(haRotelle){
+                    this.montaRotelle()
+                }
+            }
+
+            smontaRotelle(){
+                this.nRuote -= 2;
+            }
+
+            montaRotelle(){
+                this.nRuote += 2;
+            }
+        }
+
+        const bianchi = new Bici();
+        bianchi.accelera(5)
+        console.log(bianchi);
+
+
+        class Auto extends Veicolo{
+
+            constructor(marca, modello, maxSpeed, nPorte = 5){
+                super(4, maxSpeed);
+
+                this.marca = marca;
+                this.modello = modello;
+                this.nPorte = nPorte;
+            }
+        }
+
+        const fiat500 = new Auto("Fiat","500", 150);
+        const mini = new Auto("Mini","one", 185, 3);
+
+        console.log(fiat500, mini);
+        
+        
+
+    </script>
+
+</body>
+</html>
