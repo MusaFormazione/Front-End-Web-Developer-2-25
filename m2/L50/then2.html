@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const p = new Promise((success) => {
+            success('Ciao mondo!');
+        })
+
+        p
+        .then(res => {
+            console.log(res);
+            return "Hello World!"//Il valore restituito dalla callback di un then, Viene ricevuto da un'eventuale then successivo. 
+        })
+        .then(res => {
+            console.log(res);//Hello World
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class SwalCopy{
+            static fire(){
+
+                const denyBtn = document.createElement('button')
+                const acceptBtn = document.createElement('button')
+                return new Promise((successo, fallimento) => {
+
+                    const result = {
+                        deny: false,
+                        accept: false
+                    }
+
+                    denyBtn.addEventListener('click',()=>{
+                        result.deny = true;
+                        successo(result);
+                    })
+
+                    acceptBtn.addEventListener('click',()=>{
+                        result.accept = true;
+                        successo(result);
+                    })
+
+
+                })
+            }
+        }
+
+
+        SwalCopy.fire()
+        .then(res => {
+            if(res.deny){
+                //fa qualcosa
+            }
+
+            if(res.accept){
+                //fa qualcosa
+            }
+        })
+
+    </script>
+
+</body>
+</html>

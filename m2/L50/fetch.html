@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Questo codice mostra come ottenere una porzione specifica di html da una chiamata ad una pagina web. 
+        //Funziona solo se stai utilizzando una estensione del browser che disattiva gli errori CORS (Cerca [nome tuo browser] cors extention. )
+
+        //Nella quasi totalità dei casi non userete facce in questo modo, Abbiamo utilizzato questo esempio solo per cercare di raggiungere una comprensione maggiore delle promise e di fetch.  
+        fetch('https://www.musaformazione.it/')
+        .then(res => res.text())
+        .then(htmlSitoMusa => {
+            // console.log(htmlSitoMusa)
+            
+            const div = document.createElement('div');
+            div.innerHTML = htmlSitoMusa;
+
+            const titolo = div.querySelector('#headline-890-25').innerText;
+
+            console.log(titolo);
+            
+        });
+
+    </script>
+
+</body>
+</html>

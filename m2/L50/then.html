@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const richiesta = new Promise((successo) => {
+
+            setTimeout(()=> {
+
+                successo({
+                    id: 1,
+                    gusto: "Diavola",
+                    prezzo: 1,
+                    timestamp: new Date().getTime()
+                })
+                
+            }, 1000)
+            
+        });
+        
+        richiesta.then(console.log)//questo risultato lo vedrò dopo 1 secondo
+        
+        console.log(new Date().getTime());
+        
+        console.log(richiesta);//promise
+        
+        console.log(new Date().getTime());//noterai che non è passato tempo, puoi leggere l'oggetto appena carica la pagina, ma non i dati restituiti dalla promise se non usi then(). Questo avviene perchè then attende che i dati siano disponibili.
+
+
+
+
+    </script>
+
+</body>
+</html>
