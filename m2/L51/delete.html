@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const id = 4; //id della pizza da eliminare
+        fetch('http://localhost:3000/pizzas/' + id, {
+            method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(res => {
+            alert(`è stata ELIMINATA la pizza con id: ${id}`)
+        })
+
+    </script>
+    
+</body>
+</html>

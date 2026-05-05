@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        const id = 3; //id della pizza da modificare
+        fetch('http://localhost:3000/pizzas/' + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                gusto: "Diavola",
+                prezzo: 1,
+                disponibile: true
+            })
+        })
+        .then(res => res.json())
+        .then(res => {
+            alert(`è stata modificata la pizza ${res.gusto} con id: ${res.id}`)
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div id="pizze" class="row"></div>
+
+    <script>
+
+
+        fetch('http://localhost:3000/pizzas')
+        .then(res => res.json())
+        .then(pizze => {
+           const target = document.getElementById('pizze');
+
+           pizze.forEach(pizza => {
+                target.innerHTML += `<div class="card col-12">
+
+  <div class="card-body">
+    <h5 class="card-title">${pizza.gusto}</h5>
+    <p class="card-text">Prezzo: ${pizza.prezzo}€</p>
+    <a href="./get-singola.html?id=${pizza.id}" class="btn btn-primary">Mostra</a>
+  </div>
+</div>`;
+           });
+        })
+
+    </script>
+    
+</body>
+</html>
