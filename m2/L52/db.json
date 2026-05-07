@@ -1,0 +1,22 @@
+{
+  "pizzas": [
+    {
+      "gusto": "In voluptas aut solu",
+      "prezzo": 91,
+      "disponibile": true,
+      "id": 1
+    },
+    {
+      "gusto": "Aut consectetur sed ",
+      "prezzo": 100,
+      "disponibile": true,
+      "id": 2
+    },
+    {
+      "gusto": "Ex nisi dolore quis ",
+      "prezzo": 56,
+      "disponibile": true,
+      "id": 5
+    }
+  ]
+}
