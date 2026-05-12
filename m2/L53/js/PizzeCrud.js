@@ -49,7 +49,7 @@ export default class PizzeCrud {
         tdAzioni.append(btnElimina, linkModifica);
         tr.append(td1, td2, td3, td4, tdAzioni);
 
-        tabellaPizze.append(tr);
+        this.tabellaPizze.append(tr);
 
     }
 
