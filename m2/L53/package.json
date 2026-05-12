@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "db":"npx json-server db.json"
+    "db":"npx json-server db.json --delay 1000"
   },
   "dependencies": {
     "json-server": "^0.17.4"
