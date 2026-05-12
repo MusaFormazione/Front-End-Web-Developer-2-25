@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.min.css">
 </head>
 <body>
-    <h1>Modifica Pizza</h1>
+    <h1>Gestione Pizze</h1>
 
-    <section id="modifica-pizza" class="container">
+    <section id="creazione-pizza" class="container">
         <h2>Aggiungi una pizza</h2>
         
-        <form id="form-modifica-pizza">
+        <form id="form-crea-pizza">
             <input type="text" id="gusto" class="form-control mb-3" placeholder="Gusto">
             <input type="number" id="prezzo" class="form-control mb-3" placeholder="Prezzo">
             <label class="mb-3">
@@ -21,13 +21,34 @@
                 Disponibile
             </label>
             <div>
-                <button class="btn btn-primary">Aggiorna</button>
+                <button class="btn btn-primary">Salva</button>
             </div>
         </form>
 
     </section>
+<hr>
+<hr>
+    <section id="lista-pizze"  class="container">
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Gusto</th>
+                    <th>Prezzo</th>
+                    <th>Disponibile</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody id="tabella-pizze">
+            </tbody>
+        </table>
+
+
+    </section>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
-    <script src="./js/modifica-pizza.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 </html>
