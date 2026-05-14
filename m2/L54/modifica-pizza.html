@@ -28,6 +28,12 @@
     </section>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.24/dist/sweetalert2.all.min.js"></script>
-    <script src="./js/modifica-pizza.js"></script>
+    <script type="module">
+
+        import PizzeCrud from './js/PizzeCrud.js';
+        
+        new PizzeCrud().setupEditForm();
+
+    </script>
 </body>
 </html>
