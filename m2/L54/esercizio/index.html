@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 54 - CRUD con fetch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 0.7rem;
+        }
+
+        input, select, button {
+            margin-top: 0.3rem;
+            padding: 0.4rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lezione 54 - CRUD con fetch e json-server</h1>
+
+    <div class="box">
+        <h2>Avvio server</h2>
+        <p>Installa le dipendenze dalla cartella L54:</p>
+        <pre>npm install</pre>
+        <p>Avvia json-server:</p>
+        <pre>npm run server</pre>
+        <p>API disponibile su <strong>http://localhost:3000/libri</strong></p>
+    </div>
+
+    <div class="box">
+        <h2>Nuovo libro</h2>
+
+        <label for="titolo">Titolo</label>
+        <input type="text" id="titolo" placeholder="Es: Il piccolo principe">
+
+        <label for="autore">Autore</label>
+        <input type="text" id="autore" placeholder="Es: Antoine de Saint-Exupery">
+
+        <label for="letto">Stato</label>
+        <select id="letto">
+            <option value="false">Da leggere</option>
+            <option value="true">Letto</option>
+        </select>
+
+        <div>
+            <button id="salvaBtn">Salva libro</button>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Lista libri</h2>
+        <button id="caricaBtn">Carica libri</button>
+        <p id="messaggio"></p>
+        <ul id="listaLibri"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

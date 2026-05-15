@@ -1,0 +1,16 @@
+{
+  "libri": [
+    {
+      "id": 1,
+      "titolo": "Il piccolo principe",
+      "autore": "Antoine de Saint-Exupery",
+      "letto": true
+    },
+    {
+      "id": 2,
+      "titolo": "Harry Potter e la pietra filosofale",
+      "autore": "J.K. Rowling",
+      "letto": false
+    }
+  ]
+}
