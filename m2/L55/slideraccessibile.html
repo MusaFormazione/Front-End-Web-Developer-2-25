@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Vanilla</title>
+  <style>
+    .carosello {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    .area-immagine {
+      position: relative;
+      line-height: 0;
+    }
+
+    .immagine {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pulsante {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.2em 0.5em;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+    }
+
+    .pulsante-precedente {
+      left: 0;
+    }
+
+    .pulsante-successivo {
+      right: 0;
+    }
+
+    .indicatori {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 0;
+    }
+
+    .indicatore {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    .indicatore.attivo {
+      background: #e55;
+    }
+
+    .didascalia {
+      text-align: center;
+      margin: 4px 0 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .solo-screen-reader{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    a:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible
+    {
+        outline: 3px solid #000;
+        outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- 
+        con role="region" Rende l'area un landmark navigabile, quindi identificabile dal reader 
+    -->
+        <h1>Slider <span aria-hidden="true">****</span></h1>
+  <div class="carosello" role="region" aria-label="galleria immagini" aria-roledescription="carosello">
+    <div class="area-immagine">
+
+        <!-- Live region -->
+        <div id="slider-accessibile-caption" class="solo-screen-reader" aria-live="polite"></div>
+
+        <img class="immagine" src="" alt="" aria-describedby="slider-accessibile-caption">
+
+        <!-- I pulsanti precedente e successivo sono Div e non Button. 
+        Inoltre, non hanno un'etichetta accessibile 
+        Soluzione:
+        Usare Button e aria-label=""
+        -->
+        <button class="pulsante pulsante-precedente" aria-label="Diapositiva precedente">&lsaquo;</button>
+        <button class="pulsante pulsante-successivo" aria-label="Diapositiva successiva">&rsaquo;</button>
+    </div>
+
+    <!-- Gli indicatori sono SPAN, quindi non si può fare focus su di essi e non sono attivabili da tastiera. 
+     Mancano anche qui gli aria-label.
+     Manca aria-current.  -->
+    <div class="indicatori" role="group" aria-label="Selezione diapositiva"></div>
+
+  </div>
+  
+
+  <script>
+
+    const slides = [
+      { id: 1, src: "https://picsum.photos/seed/forest/600/340", title: "Foresta autunnale" },
+      { id: 2, src: "https://picsum.photos/seed/mountain/600/340", title: "Montagna innevata" },
+      { id: 3, src: "https://picsum.photos/seed/beach/600/340", title: "Spiaggia tropicale" },
+      { id: 4, src: "https://picsum.photos/seed/city/600/340", title: "Citta di notte" }
+    ];
+
+    let current = 0;
+
+    const image = document.querySelector(".immagine");
+    const caption = document.querySelector("#slider-accessibile-caption");
+    
+    const indicatorsContainer = document.querySelector(".indicatori");
+    const prevButton = document.querySelector(".pulsante-precedente");
+    const nextButton = document.querySelector(".pulsante-successivo");
+
+    function renderIndicators() {
+      indicatorsContainer.innerHTML = "";//svuota area indicatori
+
+      slides.forEach((slide, i) => {
+        const indicator = document.createElement("button");
+        indicator.className = "indicatore";
+        indicator.setAttribute('aria-label',`Immagine ${current + 1} di ${slides.length}: ${slide.title}`)
+
+        if (i === current) {
+          indicator.classList.add("attivo");
+          indicator.setAttribute('aria-current','true')
+        }
+
+        indicator.addEventListener("click", () => {
+          current = i;
+          render();
+        });
+
+        indicatorsContainer.appendChild(indicator);
+      });
+    }
+
+    function render() {
+      const slide = slides[current];
+
+      image.src = slide.src;
+      image.alt = slide.title;
+      caption.textContent = `Immagine ${current + 1} di ${slides.length}: ${slide.title}`;
+      renderIndicators();
+    }
+
+    function showPreviousSlide() {
+      if( (current - 1) >= 0){
+        current--
+      }else{
+        current = slides.length - 1;
+      }
+      render();
+    }
+
+    function showNextSlide() {
+      if( (current + 1) < slides.length){
+        current++
+      }else{
+        current = 0;
+      }
+      render();
+    }
+
+    prevButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+
+    render();
+  </script>
+</body>
+</html>

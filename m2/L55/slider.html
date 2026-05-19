@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Vanilla</title>
+  <style>
+    .carosello {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    .area-immagine {
+      position: relative;
+      line-height: 0;
+    }
+
+    .immagine {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pulsante {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.2em 0.5em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .pulsante-precedente {
+      left: 0;
+    }
+
+    .pulsante-successivo {
+      right: 0;
+    }
+
+    .indicatori {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 0;
+    }
+
+    .indicatore {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+
+    .indicatore.attivo {
+      background: #e55;
+    }
+
+    .didascalia {
+      text-align: center;
+      margin: 4px 0 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+  Consigli per gli slider:
+  - Evitare riproduzione automatica, Ma se questa è proprio necessaria, allora permettere all'utente di metterla in pausa.
+  - Assicurarsi che lo scorrimento non sia troppo veloce
+  - Verificare contrasti tra testo e sfondo. 
+  - I DOT o bullets Se presenti, devono essere raggiungibili da tastiera e utilizzabili. 
+  - I cambiamenti nello slider vanno comunicati al reader. 
+  -->
+
+  <!-- 
+  Al momento lo screen reader non sa che questo blocco è un carosello, Quindi non ne annuncia lo scopo all'utente.
+  Soluzioni possibili: Usare section Oppure  <div role="region" aria-label="Galleria immagini"> 
+  -->
+  <div class="carosello">
+    <div class="area-immagine">
+
+      <!-- 
+        L'immagine non ha un attributo alt significativo. 
+        Quando l'attributo SRC cambia, lo screen reader deve annunciare il cambiamento Al momento non annuncia nulla. L'utente non sa che l'immagine è cambiata, né quale è l'immagine attiva 
+
+        Soluzione:
+        Usare un elemento aria live che descriva la slide corrente, Un'Alt significativo per l'immagine, aria-describedby Per collegare l'immagine alla descrizione testuale   
+      -->
+      <img class="immagine" src="" alt="">
+
+      <!-- I pulsanti precedente e successivo sono Div e non Button. 
+       Inoltre, non hanno un'etichetta accessibile 
+       Soluzione:
+       Usare Button e aria-label=""
+       -->
+      <div class="pulsante pulsante-precedente">&lsaquo;</div>
+      <div class="pulsante pulsante-successivo">&rsaquo;</div>
+    </div>
+
+    <!-- Gli indicatori sono SPAN, quindi non si può fare focus su di essi e non sono attivabili da tastiera. 
+     Mancano anche qui gli aria-label.
+     Manca aria-current.  -->
+    <div class="indicatori"></div>
+
+    <p class="didascalia"></p>
+  </div>
+
+  <script>
+
+    const slides = [
+      { id: 1, src: "https://picsum.photos/seed/forest/600/340", title: "Foresta autunnale" },
+      { id: 2, src: "https://picsum.photos/seed/mountain/600/340", title: "Montagna innevata" },
+      { id: 3, src: "https://picsum.photos/seed/beach/600/340", title: "Spiaggia tropicale" },
+      { id: 4, src: "https://picsum.photos/seed/city/600/340", title: "Citta di notte" }
+    ];
+
+    let current = 0;
+
+    const image = document.querySelector(".immagine");
+    const caption = document.querySelector(".didascalia");
+    const indicatorsContainer = document.querySelector(".indicatori");
+    const prevButton = document.querySelector(".pulsante-precedente");
+    const nextButton = document.querySelector(".pulsante-successivo");
+
+    function renderIndicators() {
+      indicatorsContainer.innerHTML = "";//svuota area indicatori
+
+      slides.forEach((slide, i) => {
+        const indicator = document.createElement("span");
+        indicator.className = "indicatore";
+
+        if (i === current) {
+          indicator.classList.add("attivo");
+        }
+
+        indicator.addEventListener("click", () => {
+          current = i;
+          render();
+        });
+
+        indicatorsContainer.appendChild(indicator);
+      });
+    }
+
+    function render() {
+      const slide = slides[current];
+
+      image.src = slide.src;
+      caption.textContent = slide.title;
+      renderIndicators();
+    }
+
+    function showPreviousSlide() {
+      if( (current - 1) >= 0){
+        current--
+      }else{
+        current = slides.length - 1;
+      }
+      render();
+    }
+
+    function showNextSlide() {
+      if( (current + 1) < slides.length){
+        current++
+      }else{
+        current = 0;
+      }
+      render();
+    }
+
+    prevButton.addEventListener("click", showPreviousSlide);
+    nextButton.addEventListener("click", showNextSlide);
+
+    render();
+  </script>
+</body>
+</html>
