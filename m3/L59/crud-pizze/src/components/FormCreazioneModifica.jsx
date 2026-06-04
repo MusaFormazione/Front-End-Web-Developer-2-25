@@ -12,7 +12,7 @@ const FormCreazioneModifica = ({onAdd, onUpdate}) => {
   function onAddHandler(e){
       let {name, value} = e.target;
 
-      //siccome value ottenuto da elemento (dom soggetto dell'evento) è stringa
+      //siccome value ottenuto da elemento dom (soggetto dell'evento) è stringa
       //se la stringa contiene solo numeri converti in number
       if(!isNaN(value)) value = Number(value);
 
