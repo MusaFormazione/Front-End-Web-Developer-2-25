@@ -1,0 +1,48 @@
+{
+  "pizzas": [
+    {
+      "gusto": "Margherita",
+      "prezzo": 5,
+      "disponibile": true,
+      "id": 1
+    },
+    {
+      "gusto": "Diavola",
+      "prezzo": 1,
+      "disponibile": true,
+      "id": 6
+    },
+    {
+      "prezzo": null,
+      "id": 7
+    },
+    {
+      "prezzo": null,
+      "id": 8
+    },
+    {
+      "gusto": "Non similique maiore",
+      "prezzo": 21,
+      "disponibile": true,
+      "id": 17
+    },
+    {
+      "gusto": "Rem fugiat nesciunt",
+      "prezzo": 10,
+      "disponibile": false,
+      "id": 18
+    },
+    {
+      "gusto": "Sunt voluptates labo",
+      "prezzo": 2,
+      "disponibile": false,
+      "id": 19
+    },
+    {
+      "gusto": "Ullamco rerum repreh",
+      "prezzo": 66,
+      "disponibile": false,
+      "id": 20
+    }
+  ]
+}
